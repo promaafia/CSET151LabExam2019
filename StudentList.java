@@ -61,13 +61,10 @@ public class StudentList {
 		{
 			String contents = LoadData();
 			String words[] = contents.split(",");
-			boolean done = false;
 			String t = args[0].substring(1);
-			for(int idx = 0; idx<words.length && !done; idx++) {
 			for(int idx = 0; idx<words.length; idx++) {
 				if(words[idx].equals(t)) {
 					System.out.println(Success);
-						done=true;
 						break;
 				}
 			}
@@ -76,6 +73,7 @@ public class StudentList {
 		else if(args[0].contains(count))
 		{
 			String contents = LoadData();
+			String words[] = contents.split(",");
 			char a[] = contents.toCharArray();
 			boolean in_word = false;
 			int count=0;
@@ -87,6 +85,7 @@ public class StudentList {
 				}
 			}
 			System.out.println(count +" word(s) found " + a.length);
+			System.out.println(words.length +" word(s) found Character" + a.length);
 			System.out.println(EndDialog);
 		}
 	}
